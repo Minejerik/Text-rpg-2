@@ -19,8 +19,10 @@ end
 if RandomTemp == 3 then
 Energy = Energy - 10
 print("You didn't sleep well! You lost energy!")
+print("You now have " .. Energy .. " energy!")
 end
 end
+
 
 MainLoop()
 end
