@@ -1,28 +1,16 @@
+--start Vars
+Cmd = require('commands')
 Energy = 30
 RandomTemp = 0
-
+--end Vars
+--This is the main function. It is called once when the program starts.
 
 print("Hello World")
 function MainLoop()
 Input = io.read()
 
 if Input == "sleep" then
-RandomTemp = math.random(1,2)
-if RandomTemp == 1 then
-if Energy < 100 then
-
-Energy = Energy + 100 - Energy
-print("You Slept Well! Back to full energy!")
-elseif Energy == 100 then
-print("You Arent Tired!")
-end
-end
-
-if RandomTemp == 2 then
-Energy = Energy - 10
-print("You didn't sleep well! You lost energy!")
-print("You now have " .. Energy .. " energy!")
-end
+Cmd.sleep()
 end
 
 
