@@ -1,6 +1,7 @@
 --start Vars
 Cmd = require('other stuff.commands')
 local work = require('other stuff.work')
+local fight= require('other stuff.fight')
 Energy = 100
 Money = 100
 RandomTemp = 0
@@ -22,6 +23,10 @@ end
 
 if Input == "askforpromotion" then
 work.askpromo()
+end
+
+if Input == "fight" then
+fight.fight()
 end
 
 MainLoop()
