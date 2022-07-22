@@ -3,6 +3,7 @@ Cmd = require('other stuff.commands')
 local work = require('other stuff.work')
 local fight= require('other stuff.fight')
 Energy = 100
+CookingGasLeft = 5
 Money = 100
 RandomTemp = 0
 --end Vars
