@@ -1,6 +1,8 @@
 --start Vars
 Cmd = require('commands')
-Energy = 30
+local work = require('work')
+Energy = 100
+Money = 100
 RandomTemp = 0
 --end Vars
 --This is the main function. It is called once when the program starts.
@@ -13,6 +15,9 @@ if Input == "sleep" then
 Cmd.sleep()
 end
 
+if Input == "work" then
+work.work()
+end
 
 MainLoop()
 end
