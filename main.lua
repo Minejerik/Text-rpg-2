@@ -1,6 +1,6 @@
 --start Vars
-Cmd = require('commands')
-local work = require('work')
+Cmd = require('other stuff.commands')
+local work = require('other stuff.work')
 Energy = 100
 Money = 100
 RandomTemp = 0
