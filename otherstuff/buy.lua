@@ -1,5 +1,5 @@
 local buy = {}
-local stand = require('standard')
+local stand = require('otherstuff.standard')
 local input
 
 buy.food = function ()
@@ -26,6 +26,7 @@ else
 print("You cant afford ".. input)
 end
 else
+print("That Doesnt Exist!")
 end
 end
 
