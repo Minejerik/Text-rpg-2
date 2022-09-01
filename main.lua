@@ -4,6 +4,7 @@ local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
 local food = require("otherstuff.food")
+local stand = require('otherstuff.standard')
 Energy = 100
 CookingGasLeft = 5
 Money = 100

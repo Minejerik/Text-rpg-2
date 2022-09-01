@@ -40,13 +40,14 @@ Buyable["coke"] = 1
 Buyable["burnt_junk"] = 0
 Buyable["steak"] = 0
 --end of variable hell
-
+local stand = require('otherstuff.standard')
 local food = {}
 
 food.cook = function ()
 	io.write("What would you like to cook?\n")
 	input = io.read()
-	if tonumber(Cookablefood[input]) == 1 then
+	if stand.tablecheck(Cookablefood,input) then
+	if tonumber(Foodlist[input]) == 1 then
 		if FoodCount[input] >= 1 then
 		FoodCount[input] = FoodCount[input] - 1
 		pro = Product[input]
@@ -59,6 +60,9 @@ food.cook = function ()
 		FoodCount[input] = FoodCount[input]-1
 		FoodCount["burnt_junk"] = FoodCount["burnt_junk"] + 1
 		print("You cant cook that, you made burnt junk")
+	end
+	else
+	print("That Doesnt Exist!")
 	end
 end
 
