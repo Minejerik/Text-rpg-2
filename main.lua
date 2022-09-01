@@ -1,7 +1,8 @@
 --start Vars
-Cmd = require('other stuff.commands')
+Cmd = require('otherstuff.commands')
 local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
+local buy = require('otherstuff.buy')
 local food = require("otherstuff.food")
 Energy = 100
 CookingGasLeft = 5
@@ -23,6 +24,18 @@ if Input == "work" then
 work.work()
 end
 
+if Input == "eat" then
+food.eat()
+end
+
+if Input == "cook" then
+food.cook()
+end
+
+if Input == "listfood" then
+food.list()
+end
+	
 if Input == "askforpromotion" then
 print("working")
 work.askpromo()
