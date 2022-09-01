@@ -44,6 +44,11 @@ end
 if Input == "fight" then
 fight.flight()
 end
+
+if Input == "buy_food" then
+buy.food()
+end
+
 Hunger = Hunger - math.random(5)
 MainLoop()
 end

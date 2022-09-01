@@ -29,6 +29,16 @@ Hungerammount["steak"] = 30
 --BLANK
 Product = {}
 Product["beef"] = "steak"
+--BLANK
+FoodCost = {}
+FoodCost["beef"] = 20
+FoodCost["coke"] = 15
+--BLANK
+Buyable = {}
+Buyable["beef"] = 1
+Buyable["coke"] = 1
+Buyable["burnt_junk"] = 0
+Buyable["steak"] = 0
 --end of variable hell
 
 local food = {}
