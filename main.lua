@@ -1,7 +1,8 @@
 --start Vars
 Cmd = require('other stuff.commands')
-local work = require('other stuff.work')
-local fight= require('other stuff.fight')
+local work = require('otherstuff.work')
+local fight= require('otherstuff.fight')
+local food = require("otherstuff.food")
 Energy = 100
 CookingGasLeft = 5
 Money = 100
@@ -9,8 +10,8 @@ RandomTemp = 0
 --end Vars
 --This is the main function. It is called once when the program starts.
 
-print("Hello World")
 function MainLoop()
+io.write("\n")
 io.write("What Would you like to do?\n")
 Input = io.read()
 
@@ -23,13 +24,14 @@ work.work()
 end
 
 if Input == "askforpromotion" then
+print("working")
 work.askpromo()
 end
 
 if Input == "fight" then
-fight.fight()
+fight.flight()
 end
-
+Hunger = Hunger - math.random(5)
 MainLoop()
 end
 MainLoop()

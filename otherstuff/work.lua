@@ -1,4 +1,5 @@
 local work = {}
+WorkCount = 0
 Promolevel = 1
 Worktitles ={}
 Worktitles[1] = "Assistant to the Intern"
@@ -21,16 +22,32 @@ Money = Money + 5*Promolevel
 Energy = Energy - 5
 print("You Went to work as a(n) ".. Worktitles[Promolevel].." !")
 print("You Earned "..5*Promolevel.." Dollars!")
+WorkCount = WorkCount +1
+if WorkCount % 5 == 0 then
+Promolevel = Promolevel +1
+print("YOU GOT PROMOTED")
+print("YOU ARE NOW A(n) " .. Worktitles[Promolevel])
+print("YOU NOW EARN "..5*Promolevel.." DOLLARS")
+end
 else
 print("You Dont Have Enough Energy!")
 print("Get Some Sleep!")
 end
 end
+
+
+
+
+
+
+
+
 --this adds the promotion system
-work.askpromo = function()
+--[[ work.askpromo = function()
+print("test")
 if Energy >= 15 then
 Energy = Energy - 15
-RandomTemp = math.random(0,Promolevel)
+RandomTemp = math.random(0,tonumber(Promolevel))
 if RandomTemp == 0 then
 Promolevel = Promolevel+1
 print("You Got Promoted to "..Worktitles[Promolevel].."!")
@@ -43,4 +60,6 @@ elseif Energy <= 15 then
 print("You Are to Tired to Ask for a promotion")
 end
 end
+
+]]--
 return work
