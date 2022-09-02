@@ -17,6 +17,24 @@ standard.getlength = function (table)
   return count
 end
 
+standard.getstringlength = function (string)
+  return string.len(string)
+end
+
+standard.printtable = function (table)
+  for i = 1, standard.getlength(table), 1 do
+    io.write(table[i]"\n")
+  end
+end
+
+standard.getkeys = function (table)
+  local keys={}
+  for key,_ in pairs(table) do
+    table.insert(keys, key)
+  end
+  return keys
+end
+
 
 
 return standard

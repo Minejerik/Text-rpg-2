@@ -17,7 +17,7 @@ RandomTemp = 0
 function MainLoop()
 io.write("\n")
 io.write("What Would you like to do?\n")
-Input = io.read()
+Input = string.lower(io.read())
 
 
 if Input == "sleep" then

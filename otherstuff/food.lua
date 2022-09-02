@@ -11,6 +11,8 @@ Foodlist[3] = "burnt_junk"
 Foodlist[4] = "steak"
 Foodlist[5] = "pork"
 Foodlist[6] = "cooked_pork"
+Foodlist[7] = "raw_chicken"
+Foodlist[8] = "cooked_chicken"
 --BLANK
 FoodCount = {}
 FoodCount["beef"] = 1
@@ -19,6 +21,8 @@ FoodCount["burnt_junk"] = 0
 FoodCount["steak"] = 0
 FoodCount["pork"] = 0
 FoodCount["cooked_pork"] = 0
+FoodCount["raw_chicken"] = 0
+FoodCount["cooked_chicken"] = 0
 --BLANK
 Cookablefood = {}
 Cookablefood["beef"] = 1
@@ -27,6 +31,8 @@ Cookablefood["burnt_junk"] = 0
 Cookablefood["steak"] = 0
 Cookablefood["pork"] = 1
 Cookablefood["cooked_pork"] = 0
+Cookablefood["raw_chicken"] = 1
+Cookablefood["cooked_chicken"] = 0
 --BLANK
 Hungerammount = {}
 Hungerammount["beef"] = 5
@@ -35,15 +41,19 @@ Hungerammount["burnt_junk"] = -2
 Hungerammount["steak"] = 30
 Hungerammount["pork"] = 6
 Hungerammount["cooked_pork"] = 35
+Hungerammount["raw_chicken"] = 3
+Hungerammount["cooked_chicken"] = 35
 --BLANK
 Product = {}
 Product["beef"] = "steak"
 Product["pork"] = "cooked_pork"
+Product["raw_chicken"] = "cooked_chicken"
 --BLANK
 FoodCost = {}
 FoodCost["beef"] = 20
 FoodCost["coke"] = 15
 FoodCost["pork"] = 25
+FoodCost["raw_chicken"] = 15
 --BLANK
 Buyable = {}
 Buyable["beef"] = 1
@@ -52,6 +62,8 @@ Buyable["burnt_junk"] = 0
 Buyable["steak"] = 0
 Buyable["cooked_pork"] = 0
 Buyable["pork"] = 1
+Buyable["raw_chicken"] = 1
+Buyable["cooked_chicken"] = 0
 --end of variable hell
 local food = {}
 

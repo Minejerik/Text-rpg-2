@@ -44,30 +44,4 @@ end
 end
 
 
-
-
-
-
-
-
---this adds the promotion system
---[[ work.askpromo = function()
-print("test")
-if Energy >= 15 then
-Energy = Energy - 15
-RandomTemp = math.random(0,tonumber(Promolevel))
-if RandomTemp == 0 then
-Promolevel = Promolevel+1
-print("You Got Promoted to "..Worktitles[Promolevel].."!")
-print("You Now Earn "..5*Promolevel.." Dollars!")
-end
-if not RandomTemp == 0 then
-print("You Didnt Get Promoted!")
-end
-elseif Energy <= 15 then
-print("You Are to Tired to Ask for a promotion")
-end
-end
-
-]]--
 return work
