@@ -48,6 +48,11 @@ if Input == "buy_food" then
 buy.food()
 end
 
+if Input == "exit" then
+print("exiting!")
+os.exit()
+end
+
 Hunger = Hunger - math.random(5)
 MainLoop()
 end
