@@ -43,9 +43,9 @@ print("working")
 work.askpromo()
 end
 
-if Input == "fight" then
-fight.flight()
-end
+--if Input == "fight" then
+--fight.flight()
+--end
 
 if Input == "buy_food" then
 buy.food()
