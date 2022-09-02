@@ -29,7 +29,7 @@ print("You Went to work as a(n) ".. Worktitles[Promolevel].." !")
 print("You Earned "..5*Promolevel.." Dollars!")
 WorkCount = WorkCount +1
 
-if not Promolevel == stand.getlength(Worktitles) then
+if Promolevel ~= 15 then
 if WorkCount % 5 == 0 then
 Promolevel = Promolevel + 1
 print("YOU GOT PROMOTED")

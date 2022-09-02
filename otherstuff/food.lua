@@ -69,7 +69,7 @@ local food = {}
 
 food.cook = function ()
 	io.write("What would you like to cook?\n")
-	input = io.read()
+	input = string.lower(io.read())
 	if stand.tablecheck(Foodlist,input) then
 		if tonumber(FoodCount[input]) >= 1 then
 			if Cookablefood[input] == 1 then
@@ -98,7 +98,7 @@ end
 
 food.eat = function ()
 io.write("What would you like to eat?\n")
-input = io.read()
+input = string.lower(io.read())
 if FoodCount[input] >= 1 then
 Hunger = Hunger + Hungerammount[input]
 print("You ate a(n) "..input)
