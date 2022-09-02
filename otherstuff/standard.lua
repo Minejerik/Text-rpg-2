@@ -9,4 +9,14 @@ standard.tablecheck = function (table, element)
     end
     return false
   end
+
+
+standard.getlength = function (table)
+  local count = 0
+  for _ in pairs(table) do count = count + 1 end
+  return count
+end
+
+
+
 return standard

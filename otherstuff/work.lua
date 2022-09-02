@@ -23,11 +23,14 @@ Energy = Energy - 5
 print("You Went to work as a(n) ".. Worktitles[Promolevel].." !")
 print("You Earned "..5*Promolevel.." Dollars!")
 WorkCount = WorkCount +1
+
+if not Promolevel == 13 then
 if WorkCount % 5 == 0 then
-Promolevel = Promolevel +1
+Promolevel = Promolevel + 1
 print("YOU GOT PROMOTED")
 print("YOU ARE NOW A(n) " .. Worktitles[Promolevel])
 print("YOU NOW EARN "..5*Promolevel.." DOLLARS")
+end
 end
 else
 print("You Dont Have Enough Energy!")
