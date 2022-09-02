@@ -5,7 +5,7 @@ local input
 buy.food = function ()
 io.write("\n")
 print("Available to buy:")
-for i = 1, 4, 1 do
+for i = 1, stand.getlength(Foodlist), 1 do
 if Buyable[Foodlist[i]] == 1 then
 print(Foodlist[i])
 end

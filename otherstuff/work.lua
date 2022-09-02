@@ -1,20 +1,25 @@
 local work = {}
+local stand = {}
+stand = require('otherstuff.standard')
 WorkCount = 0
 Promolevel = 1
 Worktitles ={}
 Worktitles[1] = "Assistant to the Intern"
 Worktitles[2] = "Intern"
-Worktitles[3] = "Part Time worker"
-Worktitles[4] = "Assistant to the Programmer"
-Worktitles[5] = "Programmer"
-Worktitles[6] = "Assistant to the Project Lead"
-Worktitles[7] = "Project Lead"
-Worktitles[8] = "Software Engineer"
-Worktitles[9] = "Hyotum"
-Worktitles[10] = "Dwight Shrute"
-Worktitles[11] = "Assistant Manager"
-Worktitles[12] = "Manager"
-Worktitles[13] = "CEO"
+Worktitles[3] = "Assistant to the part time worker"
+Worktitles[4] = "Part Time worker"
+Worktitles[5] = "worker"
+Worktitles[6] = "Assistant to the Programmer"
+Worktitles[7] = "Programmer"
+Worktitles[8] = "Assistant to the Project Lead"
+Worktitles[9] = "Project Lead"
+Worktitles[10] = "Software Engineer"
+Worktitles[11] = "Hyotum"
+Worktitles[12] = "Dwight Shrute"
+Worktitles[13] = "Assistant Manager"
+Worktitles[14] = "Manager"
+Worktitles[15] = "CEO"
+
 --this adds work systems
 work.work = function()
 if Energy >= 5 then
@@ -24,7 +29,7 @@ print("You Went to work as a(n) ".. Worktitles[Promolevel].." !")
 print("You Earned "..5*Promolevel.." Dollars!")
 WorkCount = WorkCount +1
 
-if not Promolevel == 13 then
+if not Promolevel == stand.getlength(Worktitles) then
 if WorkCount % 5 == 0 then
 Promolevel = Promolevel + 1
 print("YOU GOT PROMOTED")

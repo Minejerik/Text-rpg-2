@@ -38,10 +38,7 @@ if Input == "listfood" then
 food.list()
 end
 	
-if Input == "askforpromotion" then
-print("working")
-work.askpromo()
-end
+
 
 --if Input == "fight" then
 --fight.flight()
