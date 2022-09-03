@@ -8,7 +8,6 @@ local stand = require('otherstuff.standard')
 VERSION = "1.6"
 
 Energy = 100
-CookingGasLeft = 5
 Money = 100
 RandomTemp = 0
 --end Vars
