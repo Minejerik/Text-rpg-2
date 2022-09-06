@@ -18,7 +18,6 @@ io.write("\n")
 io.write("What Would you like to do?\n")
 Input = string.lower(io.read())
 
-
 if Input == "sleep" then
 cmd.sleep()
 end
@@ -35,11 +34,9 @@ if Input == "cook" then
 food.cook()
 end
 
-if Input == "listfood" then
+if Input == "list_food" then
 food.list()
 end
-	
-
 
 if Input == "fight" then
 fight.flight()

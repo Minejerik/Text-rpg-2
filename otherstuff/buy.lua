@@ -7,7 +7,7 @@ io.write("\n")
 print("Available to buy:")
 for i = 1, stand.getlength(Foodlist), 1 do
 if Buyable[Foodlist[i]] == 1 then
-print(Foodlist[i])
+print(Foodlist[i],FoodCost[i])
 end
 end
 io.write("\n")

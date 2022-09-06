@@ -35,6 +35,16 @@ standard.getkeys = function (table)
   return keys
 end
 
+standard.senderror = function (errmsg,quit,location)
+	io.write("\n")
+	io.write("FATAL ERROR\n")
+	io.write(errmsg.."\n")
+	io.write(location.."\n")
+	if quit then
+	os.exit()
+end
+end
+
 
 
 return standard

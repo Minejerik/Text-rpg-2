@@ -37,12 +37,8 @@ print("YOU ARE NOW A(n) " .. Worktitles[Promolevel])
 print("YOU NOW EARN "..5*Promolevel.." DOLLARS")
 end
 end
-elseif not Hunger >=5 then
-print("You Dont have enough hunger!")
-print("Eat Someting!")
-elseif not Energy >=5 then
-print("You Dont Have Enough Energy!")
-print("Get Some Sleep!")
+else
+print("Eat something or sleep")
 end
 end
 
