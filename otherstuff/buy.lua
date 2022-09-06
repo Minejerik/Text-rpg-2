@@ -7,14 +7,13 @@ io.write("\n")
 print("Available to buy:")
 for i = 1, stand.getlength(Foodlist), 1 do
 if Buyable[Foodlist[i]] == 1 then
-print(Foodlist[i],FoodCost[i])
+print("The cost of "..Foodlist[i].." is "..FoodCost[Foodlist[i]])
 end
 end
 io.write("\n")
 io.write("What would you like to buy?\n")
 input = io.read()
 if stand.tablecheck(Foodlist,input) then
- 
 if Money >= tonumber(FoodCost[input]) then
 print("You bought a(n) "..input)
 local temp = tonumber(FoodCost[input])
