@@ -11,9 +11,9 @@ Firstnames[2]="Jaan-Erik"
 
 fight.flight = function ()
 	if Energy >= 10 then
-	RandomTemp = math.random(5)
+	RandomTemp = math.random(2)
 	if RandomTemp == 1 then
-		print("You Won the fight Against "..Firstnames[math.random(stand.getlength(Firstnames))]..Lastnames[math.random(stand.getlength(Lastnames))].." !")
+		print("You Won the fight against "..Firstnames[math.random(stand.getlength(Firstnames))]..Lastnames[math.random(stand.getlength(Lastnames))].." !")
 		RandomTemp = math.random(100)
 		print("You Earned "..RandomTemp.." Dollars!")
 		Money = Money+RandomTemp
@@ -22,9 +22,12 @@ fight.flight = function ()
 		Energy = Energy - RandomTemp
 	else
 	print("You lost!")
+			RandomTemp = math.random(30)
+		print("You Lost "..RandomTemp.." Energy!")
+		Energy = Energy - RandomTemp
 	end
 		else
-			print("You dont have enough energy! Come back later! - "..Firstnames[math.random(stand.getlength(Firstnames))],Lastnames[math.random(stand.getlength(Lastnames))].."!")
+			print("You dont have enough energy! Come back later! - "..Firstnames[math.random(stand.getlength(Firstnames))]..Lastnames[math.random(stand.getlength(Lastnames))].."!")
 		RandomTemp = math.random(100)
 		end
 	end

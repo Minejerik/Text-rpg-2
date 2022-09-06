@@ -1,5 +1,5 @@
 --start Vars
-Cmd = require('otherstuff.commands')
+local cmd = require('otherstuff.commands')
 local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
@@ -20,7 +20,7 @@ Input = string.lower(io.read())
 
 
 if Input == "sleep" then
-Cmd.sleep()
+cmd.sleep()
 end
 
 if Input == "work" then
@@ -41,9 +41,9 @@ end
 	
 
 
---if Input == "fight" then
---fight.flight()
---end
+if Input == "fight" then
+fight.flight()
+end
 
 if Input == "buy_food" then
 buy.food()
