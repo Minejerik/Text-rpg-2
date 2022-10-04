@@ -19,28 +19,28 @@ fight.flight = function()
         RandomTemp = math.random(2)
         if RandomTemp == 1 then
             print(
-                "You Won the fight against " ..
+                C.green.."You Won the fight against " ..
                     Firstnames[math.random(stand.getlength(Firstnames))] ..
                         Lastnames[math.random(stand.getlength(Lastnames))] .. " !"
             )
             RandomTemp = math.random(100)
-            print("You Earned " .. RandomTemp .. " Dollars!")
+            print("You Earned " .. RandomTemp .. " Dollars!"..C.none)
             Money = Money + RandomTemp
             RandomTemp = math.random(30)
-            print("You Lost " .. RandomTemp .. " Energy!")
+            print(C.red.."You Lost " .. RandomTemp .. " Energy!"..C.none)
             Energy = Energy - RandomTemp
         else
-            print("You lost against "..Firstnames[math.random(stand.getlength(Firstnames))] ..
+            print(C.red.."You lost against "..Firstnames[math.random(stand.getlength(Firstnames))] ..
                     Lastnames[math.random(stand.getlength(Lastnames))] .. "!")
             RandomTemp = math.random(30)
-            print("You Lost " .. RandomTemp .. " Energy!")
+            print("You Lost " .. RandomTemp .. " Energy!"..C.none)
             Energy = Energy - RandomTemp
         end
     else
         print(
-            "You dont have enough energy! Come back later! - " ..
+            C.red.."You dont have enough energy! Come back later! - " ..
                 Firstnames[math.random(stand.getlength(Firstnames))] ..
-                    Lastnames[math.random(stand.getlength(Lastnames))] .. "!"
+                    Lastnames[math.random(stand.getlength(Lastnames))] .. "!"..C.none
         )
         RandomTemp = math.random(100)
     end

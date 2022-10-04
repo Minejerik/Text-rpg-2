@@ -96,11 +96,11 @@ food.cook = function ()
 			pro = Product[input]
 			FoodCount[input] = FoodCount[input] - 1
 			FoodCount[pro] = FoodCount[pro] + 1
-			print("Cooked 1 piece of "..pro)
+			print(C.green.."Cooked 1 piece of "..pro..C.none)
 			else
 			FoodCount[input] = FoodCount[input]-1
 			FoodCount["burnt_junk"] = FoodCount["burnt_junk"] + 1
-			print("You cant cook that, you made burnt junk")
+			print(C.red.."You cant cook that, you made burnt junk"..C.none)
 			end
 		else
 		print("You dont have any "..input)
@@ -123,10 +123,10 @@ input = string.lower(io.read())
 if FoodCount[input] >= 1 then
 Energy = Energy + Energyammount[input]
 print("You ate a(n) "..input)
-print("You gained "..Energyammount[input].." Energy!")
+print(C.green.."You gained "..Energyammount[input].." Energy!"..C.none)
 FoodCount[input] = FoodCount[input] - 1
 else
-print("You dont have any "..input)
+print(C.red.."You dont have any "..input..C.none)
 end
 end
 

@@ -13,19 +13,21 @@ end
 io.write("\n")
 io.write("What would you like to buy?\n")
 input = io.read()
+io.write('How Much?\n')
+local ammount = io.read()
 if stand.tablecheck(Foodlist,input) then
-if Money >= tonumber(FoodCost[input]) then
-print("You bought a(n) "..input)
-local temp = tonumber(FoodCost[input])
-print("You spent "..temp.." dollars")
+if Money >= tonumber(FoodCost[input]*ammount) then
+print(C.green.."You bought "..ammount.." of "..input..C.none)
+local temp = tonumber(FoodCost[input]*ammount)
+print(C.red.."You spent "..temp.." dollars"..C.none)
 --print(temp)
 Money = Money - temp
-FoodCount[input] = FoodCount[input] + 1
+FoodCount[input] = FoodCount[input] + 1*ammount
 else
-print("You cant afford ".. input)
+print(C.red.."You cant afford "..ammount.." of ".. input..C.none)
 end
 else
-print("That Doesnt Exist!")
+print(C.red.."That Doesnt Exist!"..C.none)
 end
 end
 
