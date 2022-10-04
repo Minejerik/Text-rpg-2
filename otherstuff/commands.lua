@@ -21,6 +21,7 @@ commands.info = function ()
 io.write('Information about your gameplay so far\n')
 print('You went to work '..Totalworkcount..' times!')
 print('You earned '..Totalmoneyearned.." dollars in total!")
+print("You Have "..Money.." right now!")
 end
 
 
