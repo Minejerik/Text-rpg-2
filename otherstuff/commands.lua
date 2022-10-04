@@ -22,6 +22,8 @@ io.write('Information about your gameplay so far\n')
 print('You went to work '..Totalworkcount..' times!')
 print('You earned '..Totalmoneyearned.." dollars in total!")
 print("You Have "..Money.." right now!")
+print('You have completed '..Cycles..' Cycles!')
+print('Game Version: '..VERSION)
 end
 
 

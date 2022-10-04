@@ -8,6 +8,7 @@ local sleepcount = 10
 local stand = require('otherstuff.standard')
 C = require('otherstuff.colors')
 VERSION = "1.7.2"
+Cycles = 0
 
 Energy = 100
 Money = 100
@@ -21,7 +22,7 @@ io.write(C.yellow.."What Would you like to do?\n"..C.none)
 Input = string.lower(io.read())
 
 if Input == "sleep" then
-if sleepcount >= 10 then
+if sleepcount >= 25 then
 cmd.sleep()
 sleepcount = 0
 else
@@ -62,6 +63,7 @@ if Input == "info" then
 cmd.info()
 end
 
+Cycles = Cycles + 1
 math.randomseed(os.time())
 sleepcount = sleepcount +1
 MainLoop()
