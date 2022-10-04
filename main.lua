@@ -7,7 +7,7 @@ local food = require("otherstuff.food")
 local sleepcount = 10
 local stand = require('otherstuff.standard')
 C = require('otherstuff.colors')
-VERSION = "1.7.2"
+VERSION = "1.7.3"
 Cycles = 0
 
 Energy = 100

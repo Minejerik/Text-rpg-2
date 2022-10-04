@@ -49,20 +49,20 @@ FoodCount["candy"] = 0
 FoodCount['raw_beans'] = 0
 FoodCount['cooked_beans'] = 0
 --BLANK
-Cookablefood = {}
-Cookablefood["beef"] = 1
-Cookablefood["coke"] = 0
-Cookablefood["burnt_junk"] = 0
-Cookablefood["steak"] = 0
-Cookablefood["pork"] = 1
-Cookablefood["cooked_pork"] = 0
-Cookablefood["raw_chicken"] = 1
-Cookablefood["cooked_chicken"] = 0
-Cookablefood["brick_of_ramen"] = 1
-Cookablefood["bowl_of_ramen"] = 0
-Cookablefood['candy'] = 0
-Cookablefood['raw_beans'] = 1
-Cookablefood['cooked_beans'] = 0
+Cookable = {}
+Cookable["beef"] = 1
+Cookable["coke"] = 0
+Cookable["burnt_junk"] = 0
+Cookable["steak"] = 0
+Cookable["pork"] = 1
+Cookable["cooked_pork"] = 0
+Cookable["raw_chicken"] = 1
+Cookable["cooked_chicken"] = 0
+Cookable["brick_of_ramen"] = 1
+Cookable["bowl_of_ramen"] = 0
+Cookable['candy'] = 0
+Cookable['raw_beans'] = 1
+Cookable['cooked_beans'] = 0
 --BLANK
 Energyammount = {}
 Energyammount["beef"] = 2
@@ -120,7 +120,7 @@ food.cook = function ()
 	input = string.lower(io.read())
 	if stand.tablecheck(Foodlist,input) then
 		if tonumber(FoodCount[input]) >= 1 then
-			if Cookablefood[input] == 1 then
+			if Cookable[input] == 1 then
 			pro = Product[input]
 			FoodCount[input] = FoodCount[input] - 1
 			FoodCount[pro] = FoodCount[pro] + 1
@@ -137,12 +137,6 @@ food.cook = function ()
 	print(C.red.."That Doesnt Exist!"..C.none)
 	end
 end
-
-
-
-
-
-
 
 food.eat = function ()
 listfoode()
