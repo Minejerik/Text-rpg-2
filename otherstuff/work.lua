@@ -22,7 +22,7 @@ Worktitles[15] = "CEO"
 
 --this adds work systems
 work.work = function()
-if Energy >= 5 and Hunger >=5 then
+if Energy >= 5 then
 Money = Money + 5*Promolevel
 Energy = Energy - 5
 print("You Went to work as a(n) ".. Worktitles[Promolevel].." !")
@@ -32,6 +32,7 @@ WorkCount = WorkCount +1
 if Promolevel ~= stand.getlength(Worktitles) then
 if WorkCount % 5 == 0 then
 Promolevel = Promolevel + 1
+io.write('\n')
 print("YOU GOT PROMOTED")
 print("YOU ARE NOW A(n) " .. Worktitles[Promolevel])
 print("YOU NOW EARN "..5*Promolevel.." DOLLARS")

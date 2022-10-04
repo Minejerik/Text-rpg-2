@@ -3,6 +3,14 @@ local input
 local stand = require('otherstuff.standard')
 local pro
 Hunger = 100
+
+function listfood()
+for i = 1, stand.getlength(Foodlist), 1 do
+local temp = Foodlist[i]
+print("You have "..FoodCount[temp].." of "..temp)
+end
+end
+
 --BLANK
 Foodlist = {}
 Foodlist[1] = "beef"
@@ -40,17 +48,17 @@ Cookablefood["cooked_chicken"] = 0
 Cookablefood["brick_of_ramen"] = 1
 Cookablefood["bowl_of_ramen"] = 0
 --BLANK
-Hungerammount = {}
-Hungerammount["beef"] = 5
-Hungerammount["coke"] = 15
-Hungerammount["burnt_junk"] = -2
-Hungerammount["steak"] = 30
-Hungerammount["pork"] = 6
-Hungerammount["cooked_pork"] = 35
-Hungerammount["raw_chicken"] = 3
-Hungerammount["cooked_chicken"] = 35
-Hungerammount["brick_of_ramen"] = 3
-Hungerammount["bowl_of_ramen"] = 15
+Energyammount = {}
+Energyammount["beef"] = 5
+Energyammount["coke"] = 15
+Energyammount["burnt_junk"] = -2
+Energyammount["steak"] = 30
+Energyammount["pork"] = 6
+Energyammount["cooked_pork"] = 35
+Energyammount["raw_chicken"] = 3
+Energyammount["cooked_chicken"] = 35
+Energyammount["brick_of_ramen"] = 3
+Energyammount["bowl_of_ramen"] = 15
 --BLANK
 Product = {}
 Product["beef"] = "steak"
@@ -109,12 +117,13 @@ end
 
 
 food.eat = function ()
+listfood()
 io.write("What would you like to eat?\n")
 input = string.lower(io.read())
 if FoodCount[input] >= 1 then
-Hunger = Hunger + Hungerammount[input]
+Energy = Energy + Energyammount[input]
 print("You ate a(n) "..input)
-print("You gained "..Hungerammount[input].." Hunger!")
+print("You gained "..Energyammount[input].." Energy!")
 FoodCount[input] = FoodCount[input] - 1
 else
 print("You dont have any "..input)
@@ -122,10 +131,7 @@ end
 end
 
 food.list = function ()
-for i = 1, stand.getlength(Foodlist), 1 do
-local temp = Foodlist[i]
-print("You have "..FoodCount[temp].." of "..temp)
-end
+listfood()
 end
 
 return food

@@ -4,6 +4,7 @@ local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
 local food = require("otherstuff.food")
+local sleepcount = 0
 local stand = require('otherstuff.standard')
 VERSION = "1.6"
 
@@ -19,7 +20,12 @@ io.write("What Would you like to do?\n")
 Input = string.lower(io.read())
 
 if Input == "sleep" then
+if sleepcount >= 10 then
 cmd.sleep()
+sleepcount = 0
+else
+print('You arent tired you cant sleep!')
+end
 end
 
 if Input == "work" then
@@ -51,7 +57,8 @@ print("exiting!")
 os.exit()
 end
 
-Hunger = Hunger - math.random(5)
+math.randomseed(os.time())
+sleepcount = sleepcount +1
 MainLoop()
 end
 MainLoop()
