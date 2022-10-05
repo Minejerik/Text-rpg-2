@@ -7,14 +7,14 @@ Hunger = 100
 function listfood()
 for i = 1, stand.getlength(Foodlist), 1 do
 local temp = Foodlist[i]
-print("You have "..FoodCount[temp].." of "..temp)
+print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." foodgroup")
 end
 end
 
 function listfoode()
 for i = 1, stand.getlength(Foodlist), 1 do
 local temp = Foodlist[i]
-if FoodCount[temp] > 0 then print("You have "..FoodCount[temp].." of "..temp) end
+if FoodCount[temp] > 0 then print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." foodgroup") end
 end
 end
 

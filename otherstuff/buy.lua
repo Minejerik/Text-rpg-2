@@ -7,7 +7,7 @@ io.write("\n")
 print("Available to buy:")
 for i = 1, stand.getlength(Foodlist), 1 do
 if Buyable[Foodlist[i]] == 1 then
-print("The cost of "..Foodlist[i].." is "..FoodCost[Foodlist[i]])
+print("The cost of "..Foodlist[i].." is "..FoodCost[Foodlist[i]].." and is in the "..FoodType[Foodlist[i]].." Foodgroup")
 end
 end
 io.write("\n")

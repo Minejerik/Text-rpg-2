@@ -6,7 +6,7 @@ local buy = require('otherstuff.buy')
 local food = require("otherstuff.food")
 local sleepcount = 1
 C = require('otherstuff.colors')
-VERSION = "1.8.1"
+VERSION = "1.8.3"
 Cycles = 0
 math.randomseed(os.time())
 local temp = math.random(1,5)
@@ -77,6 +77,7 @@ if Money < 0 then
 io.write('\n')
 print(C.red..'Your In Debt!')
 print('You Lose the game!'..C.none)
+print('')
 cmd.info()
 os.exit()
 end
