@@ -12,8 +12,8 @@ commands.sleep = function ()
     end
     end
     if RandomTemp == 2 or RandomTemp == 3 or RandomTemp == 1 then
-    if Energy >10 then Energy = Energy - 10;print(C.red.."You didn't sleep well! You lost energy!"..C.none)end
-    print("You now have " .. Energy .. " energy!")
+    if Energy >10 then Energy = Energy - 10;print(C.red.."You didn't sleep well! You lost energy!") else print(C.red.."You didn't sleep well!") end
+    print("You now have " .. Energy .. " energy!"..C.none)
     end
 end
 
@@ -21,8 +21,10 @@ commands.info = function ()
 io.write('Information about your gameplay so far\n')
 print('You went to work '..Totalworkcount..' times!')
 print('You earned '..Totalmoneyearned.." dollars in total!")
-print("You Have "..Money.." right now!")
+print("You Have "..Money.." dollars right now!")
 print('You have completed '..Cycles..' Cycles!')
+print('You won '..Wins..' fights')
+print('You lost '..Losses..' fights')
 print('Game Version: '..VERSION)
 end
 

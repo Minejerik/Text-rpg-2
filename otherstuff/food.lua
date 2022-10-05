@@ -67,7 +67,7 @@ Cookable['cooked_beans'] = 0
 Energyammount = {}
 Energyammount["beef"] = 2
 Energyammount["coke"] = 5
-Energyammount["burnt_junk"] = -2
+Energyammount["burnt_junk"] = -5
 Energyammount["steak"] = 25
 Energyammount["pork"] = 5
 Energyammount["cooked_pork"] = 15
@@ -109,6 +109,28 @@ Buyable["bowl_of_ramen"] = 0
 Buyable['candy'] = 1
 Buyable['raw_beans'] = 1
 Buyable['cooked_beans'] = 0
+--BLANK
+FoodType = {}
+FoodType['beef'] = 'meat'
+FoodType['coke'] = 'sugar'
+FoodType['burnt_junk'] = 'junk'
+FoodType['steak'] = 'meat'
+FoodType['cooked_pork'] = 'meat'
+FoodType['pork'] = 'meat'
+FoodType['raw_chicken'] = 'meat'
+FoodType['cooked_chicken'] = 'meat'
+FoodType['brick_of_ramen'] = 'proccesed'
+FoodType['bowl_of_ramen'] = 'proccesed'
+FoodType['candy'] = 'sugar'
+FoodType['raw_beans'] = 'plants'
+FoodType["cooked_beans"] = 'plants'
+--BLANK
+Allergies = {}
+Allergies[1] = 'sugar'
+Allergies[2] = 'junk'
+Allergies[3] = 'meat'
+Allergies[4] = 'plants'
+Allergies[5] = 'proccesed'
 --end of variable hell
 local food = {}
 
@@ -144,10 +166,17 @@ io.write("What would you like to eat?\n")
 input = string.lower(io.read())
 if stand.tablecheck(Foodlist,input) then
 if FoodCount[input] >= 1 then
+if FoodType[input] ~= Allergie then
 Energy = Energy + Energyammount[input]
 print("You ate a(n) "..input)
 print(C.green.."You gained "..Energyammount[input].." Energy!"..C.none)
 FoodCount[input] = FoodCount[input] - 1
+else
+print(C.red..'You Are Alergic to '..input)
+print('You Lost 15 Energy!'..C.none)
+Energy = Energy - 15
+FoodCount[input] = FoodCount[input] - 1
+end
 else
 print(C.red.."You dont have any "..input..C.none)
 end

@@ -4,20 +4,21 @@ local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
 local food = require("otherstuff.food")
-local sleepcount = 10
-local stand = require('otherstuff.standard')
+local sleepcount = 1
 C = require('otherstuff.colors')
-VERSION = "1.7.3"
+VERSION = "1.8.1"
 Cycles = 0
-
+math.randomseed(os.time())
+local temp = math.random(1,5)
+Allergie = Allergies[temp]
 Energy = 100
 Money = 100
 RandomTemp = 0
 --end Vars
 --This is the main function. It is called once when the program starts.
+print(C.red..'You are alergic to the '..Allergie.." food group"..C.none)
 
 function MainLoop()
-io.write("\n")
 io.write(C.yellow.."What Would you like to do?\n"..C.none)
 Input = string.lower(io.read())
 
@@ -64,6 +65,22 @@ cmd.info()
 end
 
 Cycles = Cycles + 1
+
+if Cycles % 30 == 0 then
+print(C.red..'You paid your taxes!')
+if Money > 30 then temp = math.random(30,Money) else temp = 5 end
+print('You Paid '..temp..' Dollars'..C.none)
+Money = Money - temp
+end
+
+if Money < 0 then
+io.write('\n')
+print(C.red..'Your In Debt!')
+print('You Lose the game!'..C.none)
+cmd.info()
+os.exit()
+end
+
 math.randomseed(os.time())
 sleepcount = sleepcount +1
 MainLoop()
