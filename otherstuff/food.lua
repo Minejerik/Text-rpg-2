@@ -7,14 +7,14 @@ Hunger = 100
 function listfood()
 for i = 1, stand.getlength(Foodlist), 1 do
 local temp = Foodlist[i]
-print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." foodgroup")
+print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." food group")
 end
 end
 
 function listfoode()
 for i = 1, stand.getlength(Foodlist), 1 do
 local temp = Foodlist[i]
-if FoodCount[temp] > 0 then print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." foodgroup") end
+if FoodCount[temp] > 0 then print("You have "..FoodCount[temp].." of "..temp.." and is in the "..FoodType[temp].." food group") end
 end
 end
 
@@ -135,6 +135,7 @@ Allergies[5] = 'proccesed'
 local food = {}
 
 food.cook = function ()
+	if House == true then
 	io.write('\n')
 	listfoode()
 	io.write('\n')
@@ -158,6 +159,9 @@ food.cook = function ()
 	else
 	print(C.red.."That Doesnt Exist!"..C.none)
 	end
+	else
+	print(C.red..'No House, Cant Cook Food!'..C.none)
+	end
 end
 
 food.eat = function ()
@@ -172,7 +176,7 @@ print("You ate a(n) "..input)
 print(C.green.."You gained "..Energyammount[input].." Energy!"..C.none)
 FoodCount[input] = FoodCount[input] - 1
 else
-print(C.red..'You Are Alergic to '..input)
+print(C.red..'You are alergic to '..input)
 print('You Lost 15 Energy!'..C.none)
 Energy = Energy - 15
 FoodCount[input] = FoodCount[input] - 1

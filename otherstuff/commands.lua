@@ -23,8 +23,10 @@ print('You went to work '..Totalworkcount..' times!')
 print('You earned '..Totalmoneyearned.." dollars in total!")
 print("You Have "..Money.." dollars right now!")
 print('You have completed '..Cycles..' Cycles!')
-print('You won '..Wins..' fights')
-print('You lost '..Losses..' fights')
+print('You won '..Wins..' fights!')
+print('You lost '..Losses..' fights!')
+print('You Paid '..Taxesammount.." in taxes!")
+print('You Have '..Mordayleft.." Days left of mortage")
 print('Game Version: '..VERSION)
 end
 
