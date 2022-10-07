@@ -3,23 +3,22 @@ local cmd = require('otherstuff.commands')
 local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
-local food = require("otherstuff.food")
+local food = require('otherstuff.food')
 local sleepcount = 1
 MorDays = 30
-Mordayleft = 30
+Mordayleft = 60
 House = false
 C = require('otherstuff.colors')
-VERSION = "1.9.0"
+VERSION = "1.9.1"
 Cycles = 0
 Taxesammount = 0
 math.randomseed(os.time())
 local temp = math.random(1,5)
 Allergie = Allergies[temp]
-Energy = 100
+Energy = 150
 Money = 100
 RandomTemp = 0
 --end Vars
---This is the main function. It is called once when the program starts.
 print(C.red..'You are alergic to the '..Allergie.." food group"..C.none)
 
 function MainLoop()
@@ -55,10 +54,10 @@ if Input == "fight" then
 fight.flight()
 end
 
-if Input == 'pay_mor' then
+if Input == 'pay_rent' then
 if Money>50 then
 Mordayleft = Mordayleft + MorDays
-print(C.green..'Paid Mortage')
+print(C.green..'Paid Rent')
 print('Good for another '..Mordayleft..' Cycles!'..C.none)
 print(C.red..'You paid 50 dollars'..C.none)
 Money = Money - 50
@@ -76,15 +75,12 @@ print("exiting!")
 os.exit()
 end
 
-if Input == "info" then
-cmd.info()
-end
 
 Cycles = Cycles + 1
 
-Mordayleft = Mordayleft - 1
+if Mordayleft>0 then Mordayleft = Mordayleft - 1 end
 
-if Cycles % 30 == 0 then
+if Cycles % 60 == 0 then
 print(C.red..'You paid your taxes!')
 if Money-50 > 15 then temp = math.random(15,Money-50) else temp = 5 end
 if House == false then temp = temp/2 end
@@ -107,10 +103,14 @@ if House == true then
 House = false
 print(C.red.."You lost your house!")
 print('Taxes Cut in half and ability to cook removed!')
-print('Pay Your Mortage for 50 dollars!'..C.none)
+print('Pay Your rent for 50 dollars!'..C.none)
 end
 else
 House = true
+end
+
+if Input == "info" then
+cmd.info()
 end
 
 math.randomseed(os.time())

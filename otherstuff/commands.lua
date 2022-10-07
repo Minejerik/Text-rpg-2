@@ -4,8 +4,8 @@ commands.sleep = function ()
     --sleep has a random chance of a good or bad outcome.
     RandomTemp = math.random(1,10)
     if RandomTemp == 4 or RandomTemp == 5 or RandomTemp == 6 or RandomTemp == 7 or RandomTemp == 8 or RandomTemp == 9 or RandomTemp == 10 then
-    if Energy < 100 then
-    Energy = Energy + 100 - Energy
+    if Energy < 150 then
+    Energy = Energy + 150
     print(C.green.."You Slept Well! Back to full energy!"..C.none)
     elseif Energy == 100 then
     print(C.red.."You Arent Tired!"..C.none)
@@ -26,7 +26,7 @@ print('You have completed '..Cycles..' Cycles!')
 print('You won '..Wins..' fights!')
 print('You lost '..Losses..' fights!')
 print('You Paid '..Taxesammount.." in taxes!")
-print('You Have '..Mordayleft.." Days left of mortage")
+print('You Have '..Mordayleft.." Days left of rent")
 print('Game Version: '..VERSION)
 end
 
