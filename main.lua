@@ -4,12 +4,12 @@ local work = require('otherstuff.work')
 local fight= require('otherstuff.fight')
 local buy = require('otherstuff.buy')
 local food = require('otherstuff.food')
-local sleepcount = 1
+local sleepcount = 15
 MorDays = 30
 Mordayleft = 60
 House = false
 C = require('otherstuff.colors')
-VERSION = "1.9.1"
+VERSION = "1.10.1"
 Cycles = 0
 Taxesammount = 0
 math.randomseed(os.time())
@@ -26,7 +26,7 @@ io.write(C.yellow.."What Would you like to do?\n"..C.none)
 Input = string.lower(io.read())
 
 if Input == "sleep" then
-if sleepcount >= 25 then
+if sleepcount >= 15 then
 cmd.sleep()
 sleepcount = 0
 else
@@ -75,7 +75,6 @@ print("exiting!")
 os.exit()
 end
 
-
 Cycles = Cycles + 1
 
 if Mordayleft>0 then Mordayleft = Mordayleft - 1 end
@@ -98,7 +97,7 @@ cmd.info()
 os.exit()
 end
 
-if Mordayleft<0 then
+if Mordayleft==0 then
 if House == true then
 House = false
 print(C.red.."You lost your house!")
@@ -113,7 +112,9 @@ if Input == "info" then
 cmd.info()
 end
 
-math.randomseed(os.time())
+temp = math.random(-123123123,123123)
+temp =os.time()+temp
+math.randomseed(temp)
 sleepcount = sleepcount +1
 MainLoop()
 end

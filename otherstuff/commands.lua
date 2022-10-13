@@ -1,20 +1,17 @@
 local commands = {}
 
 commands.sleep = function ()
-    --sleep has a random chance of a good or bad outcome.
-    RandomTemp = math.random(1,10)
-    if RandomTemp == 4 or RandomTemp == 5 or RandomTemp == 6 or RandomTemp == 7 or RandomTemp == 8 or RandomTemp == 9 or RandomTemp == 10 then
-    if Energy < 150 then
-    Energy = Energy + 150
-    print(C.green.."You Slept Well! Back to full energy!"..C.none)
-    elseif Energy == 100 then
-    print(C.red.."You Arent Tired!"..C.none)
-    end
-    end
-    if RandomTemp == 2 or RandomTemp == 3 or RandomTemp == 1 then
-    if Energy >10 then Energy = Energy - 10;print(C.red.."You didn't sleep well! You lost energy!") else print(C.red.."You didn't sleep well!") end
-    print("You now have " .. Energy .. " energy!"..C.none)
-    end
+--sleep has a random chance of a good or bad outcome.
+local randomtemp = math.random(1,100)
+if randomtemp >=50 then
+print(C.green.."You Slept Well!")
+print('You Gained '..randomtemp..' Energy!'..C.none)
+Energy = Energy + randomtemp
+else
+print(C.red..'You Didnt Sleep Well')
+print('You Only Gained '..randomtemp..' Energy!'..C.none)
+Energy = Energy+randomtemp
+end
 end
 
 commands.info = function ()

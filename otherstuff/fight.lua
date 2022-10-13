@@ -15,8 +15,6 @@ Lastnames[4] = " Sagini"
 Firstnames[4] = "Joshua"
 Firstnames[5] = "Blake"
 Lastnames[5] = " Shelton"
-Firstnames[6] = "James"
-Lastnames[6] = " Smith"
 
 fight.flight = function()
 	io.write('\n')
