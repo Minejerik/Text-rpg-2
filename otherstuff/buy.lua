@@ -10,7 +10,7 @@ buy.food = function()
             print(
                 "The cost of " ..
                     Foodlist[i] ..
-                        " per 100 grams is " .. FoodCost[Foodlist[i]]*100 .. " and is in the " .. FoodType[Foodlist[i]] .. " food group"
+                        " per 100 grams is " .. FoodCost[Foodlist[i]]*100 .. " in the " .. FoodType[Foodlist[i]] .. " food group"
             )
         end
     end

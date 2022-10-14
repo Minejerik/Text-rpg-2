@@ -9,7 +9,7 @@ MorDays = 30
 Mordayleft = 60
 House = false
 C = require('otherstuff.colors')
-VERSION = "1.10.1"
+VERSION = "1.10.3"
 Cycles = 0
 Taxesammount = 0
 math.randomseed(os.time())
@@ -19,7 +19,7 @@ Energy = 150
 Money = 100
 RandomTemp = 0
 --end Vars
-print(C.red..'You are alergic to the '..Allergie.." food group"..C.none)
+print(C.red..'You are allergic to the '..Allergie.." food group"..C.none)
 
 function MainLoop()
 io.write(C.yellow.."What Would you like to do?\n"..C.none)
